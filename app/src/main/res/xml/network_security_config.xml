@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+     <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">dev-dashboard.faceopen.com</domain>
+        <domain includeSubdomains="true">qa-dashboard.faceopen.com</domain>
+        <domain includeSubdomains="true">dashboard.faceopen.com</domain>
+        <domain includeSubdomains="true">34.93.197.48</domain>
+        <domain includeSubdomains="true">storage.googleapis.com</domain>
+        <domain includeSubdomains="true">34.93.212.15</domain>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

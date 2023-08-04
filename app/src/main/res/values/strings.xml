@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Voice Approval</string>
+
+    <string-array name="dropdown_options">
+        <item>door_open</item>
+        <item>door_close</item>
+        <item>unknown</item>
+        <item>door_stop</item>
+    </string-array>
+</resources>
