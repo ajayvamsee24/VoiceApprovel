@@ -11,11 +11,11 @@ import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.voiceapprovel.mobile.MainActivity
+import com.voiceapprovel.mobile.view.MainActivity
 import com.voiceapprovel.mobile.R
 import com.voiceapprovel.mobile.constants.DropdownOptions
 import com.voiceapprovel.mobile.databinding.AudioItemBinding
-import com.voiceapprovel.mobile.model.AudioPrediction
+import com.voiceapprovel.mobile.api.model.AudioPrediction
 import com.voiceapprovel.mobile.utilty.DateTimeUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -48,6 +48,7 @@ class AudioListAdapter(
         //Log.d(TAG, "onCreateViewHolder: $audioItems")
         val inflater = LayoutInflater.from(parent.context)
         val binding = AudioItemBinding.inflate(inflater, parent, false)
+
         binding.circlePb.setProgress(0F)
         handler = Handler(Looper.myLooper()!!)
 
@@ -60,6 +61,7 @@ class AudioListAdapter(
                 android.R.layout.simple_spinner_dropdown_item,
                 spinnerOptions
             )
+
         binding.spinner.adapter = defaultAdapter
 
         val defaultOption = spinnerOptions.firstOrNull()
@@ -67,7 +69,6 @@ class AudioListAdapter(
         defaultOption?.let {
             val defaultIndex = spinnerOptions.indexOf(defaultOption)
             // binding.spinner.setSelection(defaultIndex+1)
-
         }
 
         return AudioViewHolder(binding)
@@ -175,8 +176,6 @@ class AudioListAdapter(
 
                 removeItem(position, view)
             }
-
-
         }
 
 
@@ -204,16 +203,12 @@ class AudioListAdapter(
 
         private fun removeItem(position: Int, view: View) {
             Log.d(TAG, "removeItem: Position $position and SIZE ${audioItems.size}")
-
-
-
             if (position in 0 until audioItems.size) {
                 audioItems.removeAt(position)
                 notifyItemRemoved(position)
                 notifyDataSetChanged()
             }
         }
-
 
     }
 

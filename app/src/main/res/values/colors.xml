@@ -577,4 +577,9 @@
     <color name="secondary_text_color">#808080</color>
     <color name="switch_track">#F3F6F7</color>
 
+
+    <color name="card_layout_bg_color_when_no_intent">#FFEFEF</color>
+    <color name="card_layout_bg_color_when_non_no_intent">#EEF0FC</color>
+    <color name="no_intent_text_color">#E85252</color>
+
 </resources>

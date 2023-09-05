@@ -1,6 +1,8 @@
 package com.voiceapprovel.mobile.api.service
 
-import com.voiceapprovel.mobile.model.AudioPrediction
+import com.voiceapprovel.mobile.api.model.AudioPrediction
+import com.voiceapprovel.mobile.api.model.UwbLiveDataModel
+import com.voiceapprovel.mobile.api.model.UwbOldDataModel
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -22,4 +24,19 @@ interface ApiService {
 
         @Field("changedLabel") changedLabel: String
     ): Response<String>
+
+
+    @GET("fetch_record")
+    suspend fun getUWBVideoData(): UwbLiveDataModel
+
+    @FormUrlEncoded
+    @POST("/get_response/")
+    suspend fun postUwbVideoData(
+        @Field("Id") id: String,
+        @Field("Inference") inference: String,
+        @Field("Feedback") feedback: String
+    ): Response<UwbLiveDataModel>
+
+    @GET("/screen_2_data")
+    suspend fun getUwbOldData(): List<UwbOldDataModel>
 }

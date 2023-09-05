@@ -2,14 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_gradient">
 
     <TextView
+        android:id="@+id/textView2"
+        style="@style/doorbot"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="DOORBOT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/liveFeedbackLayout"
+        layout="@layout/feedback_layout"/>
+
+   <!-- <TextView
         android:id="@+id/tvDoorName"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:gravity="center"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
@@ -100,5 +117,5 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/GRAY_400_A100"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

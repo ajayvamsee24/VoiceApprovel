@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/pvMedia"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="fit"
+        app:use_controller="true" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_video"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/spinner_background"
+        android:paddingLeft="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pvMedia"
+        app:layout_constraintEnd_toStartOf="@+id/ivApproved"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pvMedia"
+        app:layout_constraintTop_toTopOf="@+id/pvMedia" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28-08-2023"
+        app:layout_constraintEnd_toEndOf="@+id/spinner3"
+        app:layout_constraintTop_toTopOf="@+id/tvTime" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:text="08:56:00"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        app:layout_constraintStart_toStartOf="@+id/spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+    <ImageView
+        android:id="@+id/ivApproved"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_tick"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner3" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

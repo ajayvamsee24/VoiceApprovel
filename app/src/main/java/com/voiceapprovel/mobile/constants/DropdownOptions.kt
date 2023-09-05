@@ -6,4 +6,6 @@ package com.voiceapprovel.mobile.constants
  */
 object DropdownOptions {
     val options = listOf("door_open", "door_close", "unknown", "door_stop","not_conf..")
+
+    val uwbOptions = listOf("walk towards", "walk faraway","walk left","walk right","No Intent")
 }

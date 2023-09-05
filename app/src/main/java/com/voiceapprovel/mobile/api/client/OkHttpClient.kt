@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
  */
 fun createOkHttpClient(): OkHttpClient {
     return OkHttpClient.Builder()
+        .followRedirects(true)
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(30, TimeUnit.SECONDS)
         .build()

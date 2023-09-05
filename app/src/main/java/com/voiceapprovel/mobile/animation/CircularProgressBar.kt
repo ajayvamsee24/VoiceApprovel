@@ -90,6 +90,7 @@ class CircleProgressBar(context: Context, attrs: AttributeSet) :
         foregroundPaint!!.color = ContextCompat.getColor(context, R.color.circle_color)
         invalidate()
         requestLayout()
+        //setBackgroundColor(Color.TRANSPARENT)
     }
 
     init {

@@ -1,8 +1,11 @@
 package com.voiceapprovel.mobile.repository
 
 import android.util.Log
+import com.voiceapprovel.mobile.api.exception.ApiException
+import com.voiceapprovel.mobile.api.model.AudioPrediction
+import com.voiceapprovel.mobile.api.model.UwbLiveDataModel
+import com.voiceapprovel.mobile.api.model.UwbOldDataModel
 import com.voiceapprovel.mobile.api.service.ApiService
-import com.voiceapprovel.mobile.model.AudioPrediction
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -35,5 +38,46 @@ class AudioPredictionRepository(private val apiService: ApiService) {
                 e.message
             }
         }
+    }
+
+    suspend fun getUwbVideoData(): UwbLiveDataModel {
+        try {
+            val response = apiService.getUWBVideoData()
+            return response
+        } catch (e: Exception) {
+            Log.d(TAG, "getUwbVideoData: ${e.message}")
+            throw ApiException(e.message)
+        }
+    }
+
+    suspend fun postUwbData(id: String, inference: String, feedback: String): String? {
+        Log.d(TAG, "PostUwbVideoData ID: $id INFERENCE: $inference FEEDBACK: $feedback")
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = apiService.postUwbVideoData(id, inference, feedback)
+                Log.d(TAG, "postUwbData: ${response.code()}")
+                return@withContext response.toString()
+            } catch (e: Exception) {
+                Log.d(TAG, "postUwbData: 11 ${e.message}")
+                e.message
+
+            }
+        }
+    }
+
+    suspend fun getUwbOldVideoData(): List<UwbOldDataModel> {
+        return  try {
+                val response = apiService.getUwbOldData()
+                return response
+            } catch (e: Exception) {
+                Log.d("TAG", "getUwbOldVideoData: ${e.message}")
+                throw ApiException(e.message)
+            }
+
+    }
+
+
+    companion object {
+        const val TAG = "AudioPredictionRepository"
     }
 }

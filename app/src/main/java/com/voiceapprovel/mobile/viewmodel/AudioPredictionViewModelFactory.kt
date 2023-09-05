@@ -11,10 +11,10 @@ import com.voiceapprovel.mobile.repository.AudioPredictionRepository
  */
 class AudioPredictionViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AudioPredictionViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(UwbViewModel::class.java)) {
             val apiService = RetrofitClient.apiService
             val repository = AudioPredictionRepository(apiService)
-            return AudioPredictionViewModel(repository) as T
+            return UwbViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
