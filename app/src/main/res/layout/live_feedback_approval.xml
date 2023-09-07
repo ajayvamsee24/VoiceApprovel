@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_gradient">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/doorbot"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="DOORBOT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selection_bot_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/background_curved"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="229dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="232dp"
+            android:text="Please Select your doorbot"
+            android:textColor="#191919"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="288dp"
+            android:layout_height="288dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginEnd="272dp"
+            android:src="@tools:sample/avatars"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bot" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="695dp"
+            android:layout_height="66.16dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="388dp"
+            android:layout_marginEnd="91dp"
+            android:layout_marginBottom="539dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="243dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="880dp"
+            android:layout_marginEnd="300dp"
+            android:layout_marginBottom="63dp"
+            android:background="@drawable/button_background"
+            android:paddingStart="35dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="35dp"
+            android:paddingBottom="16dp"
+            android:text="Select Door"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+    <include
+        android:id="@+id/selectionLayout"
+        layout="@layout/selection_layout"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/feedbackLayout"
+        layout="@layout/feedback_layout"
+        android:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
